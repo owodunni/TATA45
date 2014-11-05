@@ -2,230 +2,30 @@
 
 \title{Mekanik I, kapitel 1}
 \author{Alexander O Poole}
-\input{../style}
+\input{style}
 
 %%Dokumentets början
 \begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
 
-\section{Punkters Kinematik}
+\pagenumbering{roman}
 
-OBS! Ska man vara korrekt då man pratar om initsialramar så ska man betäckna vilken
-referensram lägesvektorn $r$ tillhör d.v.s. $r_r$. Detta struntar jag dock i då det
-inte behövs på tentan. Vill man göra det ändå så set det ut på följande vis 
-$r = r_r$, $v = v_r$ och $a = a_r$.
+\section*{Inledning}
+Detta är en sammanfattning på kursen TATA45 komplex analys som ges på Linköping universitet. 
+Sammanfattningen syftar till att med mina egna ord förklara kurs kompendiumet skrivet av Lars Alexandersson. 
+Styckena i sammanfattningen kommer följa de i kurskompendiumet både med namn och numrering. 
 
-\begin{itemize}
-  \item Referensram - stel odeformerbar kropp, man kollar ofta hur något rör sig i 
-  förhållande till en referensram.I en given referensram $r$ kan man införa ett 
-  kordinatsystem med basvektorerna $\hat{e}^r_i$ kan vi beskriva lägesvektorn 
-  $r_r$ för en punkt i rörelse.
+\pagebreak
 
-\end{itemize}
+\tableofcontents
 
-\begin{equation}
- r = \sum\limits_{i=1}^n r\hat{e}^r_i 
-\end{equation}
+\pagebreak
 
-\begin{equation}
-v = \frac{dr}{dt} = \sum\limits_{i=1}^n \dot{r}\hat{e}^r_i 
-\end{equation}
 
-\begin{equation}
-a = \frac{d^2r}{dt^2} = \sum\limits_{i=1}^n \ddot{r}\hat{e}^r_i 
-\end{equation}
-
-
-\subsection{Plana kurvors geometri}
-
-  En kurva kan alltid parametriseras med avsende på en skalär dvs $u(t)$ 
-  är entydligt bestämt.
-  
-\begin{equation}
- \hat{t} = \frac{dr}{ds}
- \label{t}
-\end{equation}
-
-$\abs{\hat{t}}=1$ vilket kommer visa sig väldigt smidigt senare.
-
-\begin{equation}
-\hat{n} = \frac{\frac{d\hat{t}}{ds}}{\abs{\frac{d\hat{t}}{ds}}} 
-\label{n}
-\end{equation}
-
- $\hat{n}*\hat{y} = 0 \text{ dvs } \hat{n} \text{ och } \hat{t} \text{ är ortogonala.}$
-$\hat{t}$ pekar alltid i rikningen som punkten rör sig och $\hat{n}$
-pekar alltid mot kröknings centrum i eventuell cirkelbana som punkten rör sig i.
-
-krökningen för en godtycklig kurva efter sträckan s:
-
-\begin{equation}
- k(s) = \abs{\frac{d\hat{t}}{ds}} 
- \label{k}
-\end{equation}
-
-krökning för en cirkel blir:
-
-\begin{equation}
-K = \frac{1}{R}   
-\end{equation}
-
-krökningen som en godtycklig funktion av båglängden $u$ betäcknas:
-
-\begin{equation}
-K(u) = \frac{\abs{\frac{dr}{du}\times\frac{d^2r}{du^2}}}{\abs{\frac{dr}{du}}^3} 
-\end{equation}
-
-Ett vanligt val av parameter är tiden t varav utrycket blir:
-
-\begin{equation}
-K(u) = \frac{\abs{v\timesa}}{\abs{v}^3} 
-\end{equation}
-
-\subsubsection{Oskulerande cirkel och krökningsradie}
-
-krökningsradie :
-\begin{equation}
-\rho = \frac{1}{K}
-\end{equation}
-
-krökningscentrum:
-\begin{equation}
-r_c = r + \rho\hat{n}
-\end{equation}
-
-\subsection{Plan kinematik i naturliga basen}
-
-\begin{equation}
-v = \frac{dr}{dt}=\frac{dr}{ds}\frac{ds}{dt}=\frac{dr}{ds}\dot{s}
-\end{equation}
-
-(\ref{t}) ger:
-
-\begin{equation}
-v= \dot{s}\hat{t}=v\hat{t}
-\end{equation}
-
-OBS! \hat{t} kan defineras positiv i godtycklig riktning.
-
-Farten $\abs{v}=\abs{\dot{s}}$ detta då \abs{\hat{t}=1}
-
-\begin{equation}
-a = \dot{v} = \ddot{s}\hat{t} +  \dot{s}\dot{\hat{t}} 
-  = \ddot{s}\hat{t} +  \dot{s}\frac{d\hat{t}}{ds}\frac{ds}{dt}
-\end{equation}
-
-Detta tillsamans med (\ref{n}) och (\ref{k}) ger:
-
-\begin{equation}
-a = \ddot{s}\hat{t}+\frac{\dot{s}^2}{\rho}\hat{n}
-\end{equation}
-
-Om kurvan är en affin funktion blir krökningsradien oändligt stor dvs punkten 
-har en rätlinjig rörelse:
-
-\begin{equation}
-a = \ddot{s}\hat{t}
-\end{equation}
-
-
-\subsubsection{Cirkelrörelse}
-
-För punkter som rör sig längs en cirkulär bana med radien $R$ och läget $\theta$ 
-gäller följande rörelse funktioner:
-
-\begin{equation}
-v = R\dot{\theta}\hat{t}
-\end{equation}
-
-\begin{equation}
-a = R\ddot{\theta}\hat{t} + R\dot{\theta}^2\hat{n}
-\end{equation}
-
-\subsubsection{Varignons sats}
-
-Vill man uttrycka sambandet mellan hastighet och acceleration utan att blanda in tid så kan 
-sträcka eller hastighers förändring annvändas istället. Detta ger varigons sats:
-
-\begin{equation}
-\int a_t ds = \int vdv
-\end{equation}
-
-\subsection{Plan kinematik i katesiska koordinater}
-
-Vill man annvända kartesiska koordinater för att täkna rörelse ekvationerna så får man 
-följande rörelseekvationer:
-
-\begin{equation}
-r = x\hat{x} + y\hat{y}
-\end{equation}
-
-\begin{equation}
-r = \dot{x}\hat{x} + \dot{y}\hat{y}
-\end{equation}
-
-\begin{equation}
-r = \ddot{x}\hat{x} + \ddot{y}\hat{y}
-\end{equation}
-
-Varignons sats:
-\begin{equation}
-\ddot{x}dx = \dot{x}d\dot{x}
-\end{equation}
-
-\begin{equation}
-\ddot{y}dy = \dot{y}d\dot{y}
-\end{equation}
-
-\subsection{Plan kinematik i polära koordinater}
-I polära koordinater annvänds basvektorerna 
-$\hat{\theta}$ och $\hat{r}$ för att bestämma en punkts läge. 
-$r$ är längden av lägesvekron $\hat{r}$ och $\theta$ är vinkeln 
-ellan en fixt linje i referensramen och lägesvektorn $\bar{r}$. 
-$\hat{\theta} \times \hat{\r}= 0$ dvs $\hat{\theta}$  är 
-ortogonal mot $\hat{\r}$ och riktad på ett sådant sätt att
-$\hat{\theta}$ pekar mot växande värden på $\theta$.
-Detta ger oss följande rörelse ekvationer:
-
-\begin{equation}
-\bar{r}=r\hat{r}
-\end{equation}
-
-\begin{equation}
-v = \dot{r}\hat{r} + r\dot{\theta}\hat{\theta}
-\end{equation}
-
-\begin{equation}
-a = (\ddot{r}-r\dot{\theta}^2)\hat{r}+(r\ddot{\theta}+2\dot{r}\dot{\theta})\hat{\theta}
-\end{equation}
-
-\subsubsection{Cirkelrörelse}
-
-Om R är konstant dvs om vi rör oss längs en cirkel blir ekvationerna:
-
-\begin{equation}
-v = R\dot{\theta}\hat{\theta}
-\end{equation}
-
-\begin{equation}
-a = R\ddot{\theta}\hat{\theta}-R\dot{\theta}^2\hat{r}
-\end{equation}
-
-
-\subsection{ordlista}
-
-\begin{itemize}
-
-  \item  Skalär - reala tal
-
-  \item  krökning - $k(s)$ anger hur $\hat{t}$ ändras längs med kurvan
-
-  \item  Oskulerande cirkel -  Om man på en given kurva skulle tangera 
-         en punkt med en cirkel med samma krökning i punkten som kurvan.
-         Så har man taggit fram den oskulerande cirkeln till punkten.
-
-  \item Affine funktion - en linjär funktion adderad med en konstant
-
-\end{itemize}
+\section{Tal, mängder och funktioner}
+\sub
 
 \end{document}
 
